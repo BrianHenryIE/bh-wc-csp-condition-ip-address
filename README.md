@@ -1,4 +1,4 @@
-[![WordPress tested 5.5](https://img.shields.io/badge/WordPress-v5.5%20tested-0073aa.svg)](#) [![PHPUnit ](.github/coverage.svg)](https://brianhenryie.github.io/bh-wp-github-actions-tests/)
+[![WordPress tested 5.5](https://img.shields.io/badge/WordPress-v5.5%20tested-0073aa.svg)](#) [![PHPUnit ](.github/coverage.svg)](https://brianhenryie.github.io/bh-wc-csp-condition-ip-address/)
 
 # IP Address Condition for WooCommerce Conditional Shipping and Payments
 
