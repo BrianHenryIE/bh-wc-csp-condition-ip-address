@@ -50,6 +50,4 @@ scratch
 
 .env.secret
 
-.github/coverage.svg
-
 auth.json
