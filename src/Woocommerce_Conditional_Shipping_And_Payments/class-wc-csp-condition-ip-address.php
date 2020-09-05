@@ -59,7 +59,7 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 	}
 
 	/**
-     * Get the customer's IP address and check it against the specified rules.
+	 * Get the customer's IP address and check it against the specified rules.
 	 *
 	 * Fails-safe when config is bad or when IP cannot be determined.
 	 *
