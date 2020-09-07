@@ -11,11 +11,13 @@ class BH_WC_CSP_Condition_IP_Address_Test extends \Codeception\Test\Unit {
 	 */
 	public function test_construct() {
 
-		$mock_loader = $this->makeEmpty( WPPB_Loader_Interface::class,
-					[
-						'add_action' => Expected::once(),
-						'add_filter' => Expected::once(),
-					]);
+		$mock_loader = $this->makeEmpty(
+			WPPB_Loader_Interface::class,
+			array(
+				'add_action' => Expected::once(),
+				'add_filter' => Expected::once(),
+			)
+		);
 
 		new BH_WC_CSP_Condition_IP_Address( $mock_loader );
 
@@ -23,10 +25,12 @@ class BH_WC_CSP_Condition_IP_Address_Test extends \Codeception\Test\Unit {
 
 	public function test_run() {
 
-		$mock_loader = $this->makeEmpty( WPPB_Loader_Interface::class,
-			[
-				'run' => Expected::once()
-			]);
+		$mock_loader = $this->makeEmpty(
+			WPPB_Loader_Interface::class,
+			array(
+				'run' => Expected::once(),
+			)
+		);
 
 		$sut = new BH_WC_CSP_Condition_IP_Address( $mock_loader );
 
@@ -36,7 +40,6 @@ class BH_WC_CSP_Condition_IP_Address_Test extends \Codeception\Test\Unit {
 
 	public function test_get_loader() {
 
-
 		$mock_loader = $this->makeEmpty( WPPB_Loader_Interface::class );
 
 		$sut = new BH_WC_CSP_Condition_IP_Address( $mock_loader );
@@ -44,7 +47,6 @@ class BH_WC_CSP_Condition_IP_Address_Test extends \Codeception\Test\Unit {
 		$loader = $sut->get_loader();
 
 		$this->assertSame( $mock_loader, $loader );
-
 
 	}
 

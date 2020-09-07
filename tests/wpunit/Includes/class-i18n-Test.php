@@ -35,7 +35,7 @@ class I18n_Test extends \Codeception\TestCase\WPTestCase {
 
 		add_filter( 'plugin_locale', $filter, 10, 2 );
 
-		$i18n         = new I18n();
+		$i18n = new I18n();
 
 		$i18n->load_plugin_textdomain();
 

@@ -19,14 +19,14 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$sut = new WC_CSP_Condition_IP_Address();
 
 		$mock_client_ip_address = '159.134.237.6';
-		$mock_config = array(
-			'159.134.237.6'
+		$mock_config            = array(
+			'159.134.237.6',
 		);
 
 		$_SERVER['HTTP_X_REAL_IP'] = $mock_client_ip_address;
-		set_transient("external_ip_address_$mock_client_ip_address", $mock_client_ip_address);
+		set_transient( "external_ip_address_$mock_client_ip_address", $mock_client_ip_address );
 
-		$data = array();
+		$data                 = array();
 		$data['condition_id'] = 'ip_address';
 		$data['value']        = $mock_config;
 		$data['modifier']     = 'in';
@@ -46,14 +46,14 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$sut = new WC_CSP_Condition_IP_Address();
 
 		$mock_client_ip_address = '159.134.237.99';
-		$mock_config = array(
-			'159.134.237.6'
+		$mock_config            = array(
+			'159.134.237.6',
 		);
 
 		$_SERVER['HTTP_X_REAL_IP'] = $mock_client_ip_address;
-		set_transient("external_ip_address_$mock_client_ip_address", $mock_client_ip_address);
+		set_transient( "external_ip_address_$mock_client_ip_address", $mock_client_ip_address );
 
-		$data = array();
+		$data                 = array();
 		$data['condition_id'] = 'ip_address';
 		$data['value']        = $mock_config;
 		$data['modifier']     = 'in';
@@ -63,7 +63,6 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$result = $sut->check_condition( $data, $args );
 
 		$this->assertFalse( $result );
-
 
 	}
 
@@ -75,14 +74,14 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$sut = new WC_CSP_Condition_IP_Address();
 
 		$mock_client_ip_address = '159.134.237.7';
-		$mock_config = array(
-			'159.134.237.6/24'
+		$mock_config            = array(
+			'159.134.237.6/24',
 		);
 
 		$_SERVER['HTTP_X_REAL_IP'] = $mock_client_ip_address;
-		set_transient("external_ip_address_$mock_client_ip_address", $mock_client_ip_address);
+		set_transient( "external_ip_address_$mock_client_ip_address", $mock_client_ip_address );
 
-		$data = array();
+		$data                 = array();
 		$data['condition_id'] = 'ip_address';
 		$data['value']        = $mock_config;
 		$data['modifier']     = 'in';
@@ -92,7 +91,6 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$result = $sut->check_condition( $data, $args );
 
 		$this->assertTrue( $result );
-
 
 	}
 
@@ -105,14 +103,14 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$sut = new WC_CSP_Condition_IP_Address();
 
 		$mock_client_ip_address = '159.144.237.7';
-		$mock_config = array(
-			'159.134.237.6/24'
+		$mock_config            = array(
+			'159.134.237.6/24',
 		);
 
 		$_SERVER['HTTP_X_REAL_IP'] = $mock_client_ip_address;
-		set_transient("external_ip_address_$mock_client_ip_address", $mock_client_ip_address);
+		set_transient( "external_ip_address_$mock_client_ip_address", $mock_client_ip_address );
 
-		$data = array();
+		$data                 = array();
 		$data['condition_id'] = 'ip_address';
 		$data['value']        = $mock_config;
 		$data['modifier']     = 'not-in';
@@ -132,7 +130,7 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 		$sut = new WC_CSP_Condition_IP_Address();
 
-		$result = $sut->check_condition( [], [] );
+		$result = $sut->check_condition( array(), array() );
 
 		$this->assertTrue( $result );
 	}
@@ -145,18 +143,23 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 		$sut = new WC_CSP_Condition_IP_Address();
 
 		$_SERVER['HTTP_X_REAL_IP'] = '123.456.789.0';
-		set_transient("external_ip_address_123.456.789.0", 'null' );
+		set_transient( 'external_ip_address_123.456.789.0', 'null' );
 
-		add_filter('pre_transient_external_ip_address_123.456.789.0', function( $return, $transient ) {
-			return null;
-		},10,2);
+		add_filter(
+			'pre_transient_external_ip_address_123.456.789.0',
+			function( $return, $transient ) {
+				return null;
+			},
+			10,
+			2
+		);
 
-		$data = array();
+		$data                 = array();
 		$data['condition_id'] = 'ip_address';
-		$data['value']        = ['123.456.789.0'];
+		$data['value']        = array( '123.456.789.0' );
 		$data['modifier']     = 'not-in';
 
-		$result = $sut->check_condition( $data, [] );
+		$result = $sut->check_condition( $data, array() );
 
 		$this->assertTrue( $result );
 	}
@@ -269,13 +272,13 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 		$input = array(
 			'condition_id' => 'ip_address',
-			'value' => "111.111.111.111\r\n222.222.222.222\r\n11.11.11.11/16",
-			'modifier' => 'not-in'
+			'value'        => "111.111.111.111\r\n222.222.222.222\r\n11.11.11.11/16",
+			'modifier'     => 'not-in',
 		);
 
 		$result = $sut->process_admin_fields( $input );
 
-		$this->assertIsArray($result['value']);
+		$this->assertIsArray( $result['value'] );
 
 		$this->assertCount( 3, $result['value'] );
 	}
@@ -289,8 +292,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 		$input = array(
 			'condition_id' => 'ip_address',
-			'value' => '',
-			'modifier' => 'not-in'
+			'value'        => '',
+			'modifier'     => 'not-in',
 		);
 
 		$result = $sut->process_admin_fields( $input );

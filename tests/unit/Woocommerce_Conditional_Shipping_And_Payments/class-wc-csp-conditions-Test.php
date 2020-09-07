@@ -11,7 +11,7 @@ class WC_CSP_Conditions_Test extends \Codeception\Test\Unit {
 
 		$sut = new WC_CSP_Conditions();
 
-		$result = $sut->add_condition( [] );
+		$result = $sut->add_condition( array() );
 
 		$this->assertIsString( $result[0] );
 
