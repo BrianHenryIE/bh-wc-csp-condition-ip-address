@@ -74,9 +74,9 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 			return true;
 		}
 
-		$external_ip_address = WC_Geolocation::get_external_ip_address();
+		$current_user_ip_address = WC_Geolocation::get_ip_address();
 
-		$ip_address = IPFactory::addressFromString( $external_ip_address );
+		$ip_address = IPFactory::addressFromString( $current_user_ip_address );
 
 		if ( is_null( $ip_address ) ) {
 			return true;

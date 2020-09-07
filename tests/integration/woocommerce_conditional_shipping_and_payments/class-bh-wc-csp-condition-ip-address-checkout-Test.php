@@ -27,7 +27,7 @@ class BH_WC_CSP_Condition_IP_Address_Checkout_Test extends \Codeception\TestCase
 
 		$before_payment_gateways = \WC_Payment_Gateways::instance()->get_available_payment_gateways();
 
-		$ip_address = \WC_Geolocation::get_external_ip_address();
+		$ip_address = \WC_Geolocation::get_ip_address();
 
 		$csp_settings = array(
 			'payment_gateways' => array(
