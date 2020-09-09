@@ -70,7 +70,7 @@ class BH_WC_CSP_Condition_IP_Address_Checkout_Test extends \Codeception\TestCase
 
 		$this->assertNotEquals( count( $before_payment_gateways ), count( $after_payment_gateways ) );
 
-		$this->assertTrue(false);
+		$this->assertTrue( false );
 	}
 
 }
