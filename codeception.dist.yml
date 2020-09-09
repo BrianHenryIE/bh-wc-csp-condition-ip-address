@@ -18,6 +18,8 @@ extensions:
         - Codeception\Command\GenerateWPXMLRPC
 params:
     - .env.testing
+reporters:
+    report: mheap\GithubActionsReporter\Printer
 coverage:
     enabled: true
     include:

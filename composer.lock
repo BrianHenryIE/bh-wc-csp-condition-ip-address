@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8929602b61dc6b4312f741e2dadca0e1",
+    "content-hash": "3bcae62f6d06f4b5f566302fc82ca6b3",
     "packages": [
         {
             "name": "brianhenryie/wppb-lib",
@@ -1091,16 +1091,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.10.10",
+            "version": "1.10.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "32966a3b1d48bc01472a8321fd6472b44fad033a"
+                "reference": "a6cc92b39c796ec3fb9a360f9c0e578afc2fc96d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/32966a3b1d48bc01472a8321fd6472b44fad033a",
-                "reference": "32966a3b1d48bc01472a8321fd6472b44fad033a",
+                "url": "https://api.github.com/repos/composer/composer/zipball/a6cc92b39c796ec3fb9a360f9c0e578afc2fc96d",
+                "reference": "a6cc92b39c796ec3fb9a360f9c0e578afc2fc96d",
                 "shasum": ""
             },
             "require": {
@@ -1181,7 +1181,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-03T09:35:19+00:00"
+            "time": "2020-09-08T20:58:51+00:00"
         },
         {
             "name": "composer/installers",
@@ -1322,16 +1322,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "1.5.1",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "c6bea70230ef4dd483e6bbcab6005f682ed3a8de"
+                "reference": "9787c20e39dfeea673665abee0679c73ba67105d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/c6bea70230ef4dd483e6bbcab6005f682ed3a8de",
-                "reference": "c6bea70230ef4dd483e6bbcab6005f682ed3a8de",
+                "url": "https://api.github.com/repos/composer/semver/zipball/9787c20e39dfeea673665abee0679c73ba67105d",
+                "reference": "9787c20e39dfeea673665abee0679c73ba67105d",
                 "shasum": ""
             },
             "require": {
@@ -1379,7 +1379,21 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2020-01-13T12:06:48+00:00"
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-09-08T20:42:08+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -2243,7 +2257,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v6.18.38",
+            "version": "v6.18.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -2287,7 +2301,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v6.18.38",
+            "version": "v6.18.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -2779,6 +2793,43 @@
             ],
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "time": "2020-06-21T17:16:08+00:00"
+        },
+        {
+            "name": "mheap/phpunit-github-actions-printer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mheap/phpunit-github-actions-printer.git",
+                "reference": "5c2511af15591c4e9484e28db8d6e050737aa6d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mheap/phpunit-github-actions-printer/zipball/5c2511af15591c4e9484e28db8d6e050737aa6d7",
+                "reference": "5c2511af15591c4e9484e28db8d6e050737aa6d7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mheap\\GithubActionsReporter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Heap",
+                    "email": "m@michaelheap.com"
+                }
+            ],
+            "description": "PHPUnit Printer for adding test failures as annotations on GitHub Actions",
+            "time": "2020-07-16T15:12:56+00:00"
         },
         {
             "name": "mikemclin/laravel-wp-password",
@@ -5134,12 +5185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "1371c59bd5da5cfc877ab8478753362edc9bbc9b"
+                "reference": "db9089d15fa0e4559e4ce600954c8adc94750bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1371c59bd5da5cfc877ab8478753362edc9bbc9b",
-                "reference": "1371c59bd5da5cfc877ab8478753362edc9bbc9b",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/db9089d15fa0e4559e4ce600954c8adc94750bf5",
+                "reference": "db9089d15fa0e4559e4ce600954c8adc94750bf5",
                 "shasum": ""
             },
             "require": {
@@ -5177,7 +5228,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2020-09-02T05:55:26+00:00"
+            "time": "2020-09-07T22:56:11+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -5412,16 +5463,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v2.1.3",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "5e20b83385a77593259c9f8beb2c43cd03b2ac14"
+                "reference": "5fa56b4074d1ae755beb55617ddafe6f5d78f665"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/5e20b83385a77593259c9f8beb2c43cd03b2ac14",
-                "reference": "5e20b83385a77593259c9f8beb2c43cd03b2ac14",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/5fa56b4074d1ae755beb55617ddafe6f5d78f665",
+                "reference": "5fa56b4074d1ae755beb55617ddafe6f5d78f665",
                 "shasum": ""
             },
             "require": {
@@ -5430,7 +5481,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -5472,7 +5523,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-06T08:49:21+00:00"
+            "time": "2020-09-07T11:33:47+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -6211,16 +6262,16 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.1.3",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "58c7475e5457c5492c26cc740cc0ad7464be9442"
+                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/58c7475e5457c5492c26cc740cc0ad7464be9442",
-                "reference": "58c7475e5457c5492c26cc740cc0ad7464be9442",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d15da7ba4957ffb8f1747218be9e1a121fd298a1",
+                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1",
                 "shasum": ""
             },
             "require": {
@@ -6233,7 +6284,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -6283,7 +6334,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-06T13:23:11+00:00"
+            "time": "2020-09-07T11:33:47+00:00"
         },
         {
             "name": "symfony/translation",
@@ -6379,16 +6430,16 @@
         },
         {
             "name": "symfony/translation-contracts",
-            "version": "v2.1.3",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "616a9773c853097607cf9dd6577d5b143ffdcd63"
+                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/616a9773c853097607cf9dd6577d5b143ffdcd63",
-                "reference": "616a9773c853097607cf9dd6577d5b143ffdcd63",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/77ce1c3627c9f39643acd9af086631f842c50c4d",
+                "reference": "77ce1c3627c9f39643acd9af086631f842c50c4d",
                 "shasum": ""
             },
             "require": {
@@ -6400,7 +6451,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -6450,7 +6501,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-06T13:23:11+00:00"
+            "time": "2020-09-07T11:33:47+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -8851,15 +8902,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce",
-            "version": "4.4.1",
+            "version": "4.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/4.4.1"
+                "reference": "tags/4.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.4.4.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.4.5.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -8965,7 +9016,8 @@
         "coenjacobs/mozart": 20,
         "kporras07/composer-symlinks": 20,
         "squizlabs/php_codesniffer": 20,
-        "voku/portable-ascii": 20
+        "voku/portable-ascii": 20,
+        "mheap/phpunit-github-actions-printer": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

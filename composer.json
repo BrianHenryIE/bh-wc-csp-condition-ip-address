@@ -64,9 +64,10 @@
         "phpunit/phpcov": "^5.0",
         "phpcompatibility/phpcompatibility-wp": "*",
         "lucatume/wp-browser": "*",
+        "mheap/phpunit-github-actions-printer": "dev-master#2cd2aad0d8f4e8fed2456a8cd287ad52cd0e864b",
         "codeception/module-asserts": "^1.0",
         "wordpress/wordpress": "^5.4",
-        "squizlabs/PHP_CodeSniffer": "dev-master",
+        "squizlabs/PHP_CodeSniffer": "dev-master#1371c59bd5da5cfc877ab8478753362edc9bbc9b",
         "wp-coding-standards/wpcs": "*",
         "wpackagist-theme/twentytwenty": "*",
         "voku/portable-ascii": "dev-master",
@@ -85,6 +86,10 @@
             },
             "jaschilz/php-coverage-badger": {
                 "Allow customising the text": "https://github.com/JASchilz/PHPCoverageBadge/pull/1.patch"
+            },
+            "mheap/phpunit-github-actions-printer": {
+                "Always use reflection to check class filename": "https://github.com/mheap/phpunit-github-actions-printer/pull/13.patch",
+                "Enable multiline messages in annotations": "https://github.com/mheap/phpunit-github-actions-printer/pull/14.patch"
             }
         },
         "mozart": {
