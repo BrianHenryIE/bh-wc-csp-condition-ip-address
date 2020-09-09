@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bcae62f6d06f4b5f566302fc82ca6b3",
+    "content-hash": "0eaa7dbe7dd2ee57e8939ea67731172c",
     "packages": [
         {
             "name": "brianhenryie/wppb-lib",
@@ -9015,9 +9015,9 @@
         "brianhenryie/composer-phpstorm": 20,
         "coenjacobs/mozart": 20,
         "kporras07/composer-symlinks": 20,
+        "mheap/phpunit-github-actions-printer": 20,
         "squizlabs/php_codesniffer": 20,
-        "voku/portable-ascii": 20,
-        "mheap/phpunit-github-actions-printer": 20
+        "voku/portable-ascii": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
