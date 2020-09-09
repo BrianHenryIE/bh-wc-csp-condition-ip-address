@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0eaa7dbe7dd2ee57e8939ea67731172c",
+    "content-hash": "e6439b48a745075417b0853861c7ebce",
     "packages": [
         {
             "name": "brianhenryie/wppb-lib",
@@ -2799,26 +2799,24 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mheap/phpunit-github-actions-printer.git",
-                "reference": "5c2511af15591c4e9484e28db8d6e050737aa6d7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mheap/phpunit-github-actions-printer/zipball/5c2511af15591c4e9484e28db8d6e050737aa6d7",
-                "reference": "5c2511af15591c4e9484e28db8d6e050737aa6d7",
-                "shasum": ""
+                "url": "https://github.com/BrianHenryIE/phpunit-github-actions-printer",
+                "reference": "5eee4840c7a76ed200e459674b5e79ae90b0fb76"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9",
+                "phpunit/phpunit": "^8",
                 "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
+            "extra": {
+                "patches_applied": {
+                    "Enable multiline messages in annotations": "https://github.com/mheap/phpunit-github-actions-printer/pull/14.patch"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "mheap\\GithubActionsReporter\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2829,7 +2827,7 @@
                 }
             ],
             "description": "PHPUnit Printer for adding test failures as annotations on GitHub Actions",
-            "time": "2020-07-16T15:12:56+00:00"
+            "time": "2020-03-23T00:28:00+00:00"
         },
         {
             "name": "mikemclin/laravel-wp-password",

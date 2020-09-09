@@ -1,5 +1,5 @@
 {
-    "name": "your-domain/bh-wc-csp-condition-ip-address",
+    "name": "brianhenryie/bh-wc-csp-condition-ip-address",
     "description": "This is a short description of what plugin_title does.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0+-or-later",
@@ -29,6 +29,10 @@
         },
         {
             "url": "https://github.com/BrianHenryIE/composer-phpstorm",
+            "type": "git"
+        },
+        {
+            "url": "https://github.com/BrianHenryIE/phpunit-github-actions-printer",
             "type": "git"
         },
         {
@@ -64,7 +68,7 @@
         "phpunit/phpcov": "^5.0",
         "phpcompatibility/phpcompatibility-wp": "*",
         "lucatume/wp-browser": "*",
-        "mheap/phpunit-github-actions-printer": "dev-master#2cd2aad0d8f4e8fed2456a8cd287ad52cd0e864b",
+        "mheap/phpunit-github-actions-printer": "dev-master",
         "codeception/module-asserts": "^1.0",
         "wordpress/wordpress": "^5.4",
         "squizlabs/php_codesniffer": "dev-master#1371c59bd5da5cfc877ab8478753362edc9bbc9b",
@@ -88,7 +92,6 @@
                 "Allow customising the text": "https://github.com/JASchilz/PHPCoverageBadge/pull/1.patch"
             },
             "mheap/phpunit-github-actions-printer": {
-                "Always use reflection to check class filename": "https://github.com/mheap/phpunit-github-actions-printer/pull/13.patch",
                 "Enable multiline messages in annotations": "https://github.com/mheap/phpunit-github-actions-printer/pull/14.patch"
             }
         },
