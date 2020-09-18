@@ -74,8 +74,8 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 			return true;
 		}
 
-		if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
-			$_SERVER['HTTP_X_REAL_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+		if ( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
+			$_SERVER['HTTP_X_REAL_IP'] = $_SERVER['HTTP_CF_CONNECTING_IP'];
 		}
 
 		$current_user_ip_address = WC_Geolocation::get_ip_address();
