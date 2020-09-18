@@ -1,6 +1,8 @@
 name: Acceptance
 
 # Runs Wp-Browser Codeception acceptance tests.
+#
+# @author BrianHenryIE
 
 on: ["push"]
 
@@ -65,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
-          name: my-artifact
+          name: acceptance-test-failure
           path: |
             tests/_output/*fail.html
             composer.json
