@@ -24,4 +24,4 @@ modules:
             activatePlugins: ['bh-wc-csp-condition-ip-address/bh-wc-csp-condition-ip-address.php',
                               'woocommerce/woocommerce.php',
                               'woocommerce-conditional-shipping-and-payments/woocommerce-conditional-shipping-and-payments.php']
-        bootstrap: _bootstrap.php
+bootstrap: _bootstrap.php
