@@ -37,7 +37,7 @@ jobs:
           path: tests/_output/html
 
       - name: Read .env.testing
-        uses: c-py/action-dotenv-to-setenv@v1
+        uses: c-py/action-dotenv-to-setenv@v2
         with:
           env-file: .env.testing
 

@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Read .env.testing
-        uses: c-py/action-dotenv-to-setenv@v1
+        uses: c-py/action-dotenv-to-setenv@v2
         with:
           env-file: .env.testing
 
