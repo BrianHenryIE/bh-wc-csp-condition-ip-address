@@ -6,7 +6,7 @@
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\Includes;
+namespace BH_WC_CSP_Condition_IP_Address\includes;
 
 /**
  * Class I18n_Test

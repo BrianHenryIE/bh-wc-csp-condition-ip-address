@@ -1,5 +1,5 @@
 <?php
-namespace BH_WC_CSP_Condition_IP_Address\Includes;
+namespace BH_WC_CSP_Condition_IP_Address\includes;
 
 use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Loader_Interface;
 use Codeception\Stub\Expected;

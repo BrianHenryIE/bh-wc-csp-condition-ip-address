@@ -9,10 +9,10 @@
  * @since      1.0.0
  *
  * @package    BH_WC_CSP_Condition_IP_Address
- * @subpackage BH_WC_CSP_Condition_IP_Address/Includes
+ * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\Includes;
+namespace BH_WC_CSP_Condition_IP_Address\includes;
 
 /**
  * Define the internationalization functionality.
@@ -22,7 +22,7 @@ namespace BH_WC_CSP_Condition_IP_Address\Includes;
  *
  * @since      1.0.0
  * @package    BH_WC_CSP_Condition_IP_Address
- * @subpackage BH_WC_CSP_Condition_IP_Address/Includes
+ * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class I18n {

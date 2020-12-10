@@ -9,12 +9,12 @@
  * @since      1.0.0
  *
  * @package    BH_WC_CSP_Condition_IP_Address
- * @subpackage BH_WC_CSP_Condition_IP_Address/Includes
+ * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\Includes;
+namespace BH_WC_CSP_Condition_IP_Address\includes;
 
-use BH_WC_CSP_Condition_IP_Address\Woocommerce_Conditional_Shipping_And_Payments\WC_CSP_Conditions;
+use BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments\WC_CSP_Conditions;
 use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Loader_Interface;
 use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Object;
 
@@ -29,7 +29,7 @@ use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Object;
  *
  * @since      1.0.0
  * @package    BH_WC_CSP_Condition_IP_Address
- * @subpackage BH_WC_CSP_Condition_IP_Address/Includes
+ * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class BH_WC_CSP_Condition_IP_Address extends WPPB_Object {

@@ -26,7 +26,7 @@
 
 namespace BH_WC_CSP_Condition_IP_Address;
 
-use BH_WC_CSP_Condition_IP_Address\Includes\BH_WC_CSP_Condition_IP_Address;
+use BH_WC_CSP_Condition_IP_Address\includes\BH_WC_CSP_Condition_IP_Address;
 use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Loader;
 
 // If this file is called directly, abort.
