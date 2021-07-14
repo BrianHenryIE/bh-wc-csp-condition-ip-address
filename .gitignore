@@ -38,18 +38,17 @@ intermediate
 .idea
 cache
 
-/vendor/
+# GitHub Actions
+DOCKER_ENV
+docker_tag
 
-
+node_modules
+scratch
+src/strauss/
+vendor/
 wordpress
-src/vendor/
-src/dependencies/
 wp-content/
 
-scratch
-
 .env.secret
-
 auth.json
-
 *.zip

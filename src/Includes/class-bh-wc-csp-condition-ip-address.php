@@ -12,11 +12,9 @@
  * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\includes;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\Includes;
 
-use BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments\WC_CSP_Conditions;
-use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Loader_Interface;
-use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Object;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments\WC_CSP_Conditions;
 
 /**
  * The core plugin class.
@@ -32,17 +30,7 @@ use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Object;
  * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
-class BH_WC_CSP_Condition_IP_Address extends WPPB_Object {
-
-	/**
-	 * The loader that's responsible for maintaining and registering all hooks that power
-	 * the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      WPPB_Loader_Interface    $loader    Maintains and registers all hooks for the plugin.
-	 */
-	protected $loader;
+class BH_WC_CSP_Condition_IP_Address {
 
 	/**
 	 * Define the core functionality of the plugin.
@@ -52,24 +40,13 @@ class BH_WC_CSP_Condition_IP_Address extends WPPB_Object {
 	 * the frontend-facing side of the site.
 	 *
 	 * @since    1.0.0
-	 *
-	 * @param WPPB_Loader_Interface $loader The WPPB class which adds the hooks and filters to WordPress.
 	 */
-	public function __construct( $loader ) {
-		if ( defined( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION' ) ) {
-			$this->version = BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION;
-		} else {
-			$this->version = '1.0.0';
-		}
-		$this->plugin_name = 'bh-wc-csp-condition-ip-address';
-
-		parent::__construct( $this->plugin_name, $this->version );
-
-		$this->loader = $loader;
+	public function __construct() {
+		// $this->version = '1.0.0';
+		// $this->plugin_name = 'bh-wc-csp-condition-ip-address';
 
 		$this->set_locale();
 		$this->define_wcsp_hooks();
-
 	}
 
 	/**
@@ -84,7 +61,7 @@ class BH_WC_CSP_Condition_IP_Address extends WPPB_Object {
 
 		$plugin_i18n = new I18n();
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
+		add_action( 'plugins_loaded', array( $plugin_i18n, 'load_plugin_textdomain' ) );
 
 	}
 
@@ -97,27 +74,8 @@ class BH_WC_CSP_Condition_IP_Address extends WPPB_Object {
 
 		$plugin_wc_csp_conditions = new WC_CSP_Conditions();
 
-		$this->loader->add_filter( 'woocommerce_csp_conditions', $plugin_wc_csp_conditions, 'add_condition' );
+		add_filter( 'woocommerce_csp_conditions', array( $plugin_wc_csp_conditions, 'add_condition' ) );
 
-	}
-
-	/**
-	 * Run the loader to execute all of the hooks with WordPress.
-	 *
-	 * @since    1.0.0
-	 */
-	public function run() {
-		$this->loader->run();
-	}
-
-	/**
-	 * The reference to the class that orchestrates the hooks with the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    WPPB_Loader_Interface    Orchestrates the hooks of the plugin.
-	 */
-	public function get_loader() {
-		return $this->loader;
 	}
 
 }

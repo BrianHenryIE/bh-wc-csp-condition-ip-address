@@ -6,7 +6,7 @@
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
 
 use WC_Payment_Gateway;
 
@@ -70,7 +70,6 @@ class BH_WC_CSP_Condition_IP_Address_Checkout_Test extends \Codeception\TestCase
 
 		$this->assertNotEquals( count( $before_payment_gateways ), count( $after_payment_gateways ) );
 
-		$this->assertTrue( false );
 	}
 
 }

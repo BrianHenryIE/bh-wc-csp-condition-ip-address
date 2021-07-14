@@ -12,7 +12,7 @@
  * @subpackage BH_WC_CSP_Condition_IP_Address/includes
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\includes;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\Includes;
 
 /**
  * Define the internationalization functionality.

@@ -1,6 +1,6 @@
 <?php
 
-namespace BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
 
 class WC_CSP_Conditions {
 
@@ -16,6 +16,8 @@ class WC_CSP_Conditions {
 	public function add_condition( $conditions ): array {
 
 		$conditions[] = WC_CSP_Condition_IP_Address::class;
+		$conditions[] = WC_CSP_Condition_Behind_VPN::class;
+		$conditions[] = WC_CSP_Condition_Browser::class;
 
 		return $conditions;
 	}

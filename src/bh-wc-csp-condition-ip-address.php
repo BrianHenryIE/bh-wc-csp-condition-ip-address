@@ -24,10 +24,9 @@
  * Domain Path:       /languages
  */
 
-namespace BH_WC_CSP_Condition_IP_Address;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address;
 
-use BH_WC_CSP_Condition_IP_Address\includes\BH_WC_CSP_Condition_IP_Address;
-use BH_WC_CSP_Condition_IP_Address\WPPB\WPPB_Loader;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\Includes\BH_WC_CSP_Condition_IP_Address;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -54,8 +53,7 @@ define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.0.1' );
  */
 function instantiate_bh_wc_csp_condition_ip_address() {
 
-	$loader = new WPPB_Loader();
-	$plugin = new BH_WC_CSP_Condition_IP_Address( $loader );
+	$plugin = new BH_WC_CSP_Condition_IP_Address();
 
 	return $plugin;
 }
@@ -64,5 +62,4 @@ function instantiate_bh_wc_csp_condition_ip_address() {
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and frontend-facing site hooks.
  */
-$GLOBALS['bh_wc_csp_condition_ip_address'] = $bh_wc_csp_condition_ip_address = instantiate_bh_wc_csp_condition_ip_address();
-$bh_wc_csp_condition_ip_address->run();
+$GLOBALS['bh_wc_csp_condition_ip_address'] = instantiate_bh_wc_csp_condition_ip_address();

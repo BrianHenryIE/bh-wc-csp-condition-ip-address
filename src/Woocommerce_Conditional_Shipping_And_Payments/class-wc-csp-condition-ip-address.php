@@ -7,9 +7,9 @@
  * @since    1.0.0
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
 
-use BH_WC_CSP_Condition_IP_Address\IPLib\Factory as IPFactory;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\IPLib\Factory as IPFactory;
 use WC_CSP_Condition;
 use WC_Geolocation;
 

@@ -1,13 +1,6 @@
 <?php
 
-
-namespace BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments;
-
-use BH_WC_CSP_Condition_IP_Address\IPLib\Factory as IPFactory;
-use BH_WC_CSP_Condition_IP_Address\Logger;
-use WC_CSP_Condition;
-use WC_Geolocation;
-
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
 
 class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase {
 

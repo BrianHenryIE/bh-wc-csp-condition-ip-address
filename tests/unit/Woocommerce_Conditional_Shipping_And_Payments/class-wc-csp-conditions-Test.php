@@ -1,6 +1,6 @@
 <?php
 
-namespace BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
 
 class WC_CSP_Conditions_Test extends \Codeception\Test\Unit {
 

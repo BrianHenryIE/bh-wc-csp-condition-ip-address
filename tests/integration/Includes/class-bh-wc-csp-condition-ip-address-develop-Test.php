@@ -6,9 +6,9 @@
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 
-namespace BH_WC_CSP_Condition_IP_Address\includes;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\Includes;
 
-use BH_WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments\WC_CSP_Conditions;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\woocommerce_conditional_shipping_and_payments\WC_CSP_Conditions;
 
 /**
  * Class Develop_Test
