@@ -12,10 +12,10 @@
  * @package           BH_WC_CSP_Condition_IP_Address
  *
  * @wordpress-plugin
- * Plugin Name:       IP Address Condition for WooCommerce Conditional Shipping and Payments
+ * Plugin Name:       IP Address Condition for WooCSP
  * Plugin URI:        http://github.com/username/bh-wc-csp-condition-ip-address/
  * Description:       Block by IPv4, IPv6 addresses, as well as IP ranges in CIDR formats and in pattern format.
- * Version:           1.0.1
+ * Version:           1.2.0
  * Author:            Brian Henry
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
@@ -40,7 +40,7 @@ require_once plugin_dir_path( __FILE__ ) . 'autoload.php';
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.0.1' );
+define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.2.0' );
 
 /**
  * Begins execution of the plugin.
