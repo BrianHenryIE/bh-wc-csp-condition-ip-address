@@ -60,6 +60,7 @@
     },
     "require": {
         "brianhenryie/bh-wp-logger": "dev-master",
+        "ext-json": "*",
         "finpaytech/iphub": "^1.0",
         "mlocati/ip-lib": "^1",
         "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master#015c9654459fd267cf12fa7846d3bf36b11c3bd7",

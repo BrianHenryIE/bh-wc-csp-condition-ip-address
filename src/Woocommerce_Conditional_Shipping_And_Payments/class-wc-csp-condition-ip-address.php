@@ -189,8 +189,8 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 				</div>
 			</div>
 			<div class="condition_value">
-				<textarea class="input-text" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][value]" placeholder="<?php esc_html( __( 'List 1 IP address or range per line&hellip;', 'bh-wc-csp-condition-ip-address' ) ); ?>" cols="25" rows="5"><?php echo esc_html( $ip_addresses ); ?></textarea>
-				<span class="description"><?php esc_html( __( 'IPv4, IPv6 addresses, as well as IP ranges, in CIDR formats (like <code>::1/128</code> or <code>127.0.0.1/32</code>) and in pattern format (like <code>::*:*</code> or <code>127.0.*.*</code>) are supported.', 'bh-wc-csp-condition-ip-address' ) ); ?></span>
+				<textarea class="input-text" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][value]" placeholder="<?php echo esc_attr( __( 'List 1 IP address or range per line&hellip;', 'bh-wc-csp-condition-ip-address' ) ); ?>" cols="25" rows="5"><?php echo esc_html( $ip_addresses ); ?></textarea>
+				<span class="description"><?php echo __( 'IPv4, IPv6 addresses, as well as IP ranges, in CIDR formats (like <code>::1/128</code> or <code>127.0.0.1/32</code>) and in pattern format (like <code>::*:*</code> or <code>127.0.*.*</code>) are supported.', 'bh-wc-csp-condition-ip-address' ); ?></span>
 			</div>
 		</div>
 		<?php

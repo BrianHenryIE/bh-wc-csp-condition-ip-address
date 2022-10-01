@@ -15,13 +15,16 @@
  * Plugin Name:       IP Address Condition for WooCSP
  * Plugin URI:        http://github.com/username/bh-wc-csp-condition-ip-address/
  * Description:       Block by IPv4, IPv6 addresses, as well as IP ranges in CIDR formats and in pattern format.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Author:            Brian Henry
  * Author URI:        http://example.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       bh-wc-csp-condition-ip-address
  * Domain Path:       /languages
+ *
+ * GitHub Plugin URI: https://github.com/BrianHenryIE/bh-wc-csp-condition-ip-address
+ * Release Asset:     true
  */
 
 namespace BrianHenryIE\WC_CSP_Condition_IP_Address;
@@ -35,7 +38,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once plugin_dir_path( __FILE__ ) . 'autoload.php';
 
-define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.2.0' );
+define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.2.1' );
 define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_BASENAME', plugin_basename( __FILE__ ) );
 
 /**

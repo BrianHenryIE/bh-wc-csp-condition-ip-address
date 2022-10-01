@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3936acd5bf1b505f66e4382821fc14e2",
+    "content-hash": "0e3c1447af0be41171f6c0eb9da04ec5",
     "packages": [
         {
             "name": "brianhenryie/bh-wp-logger",
@@ -12,7 +12,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BrianHenryIE/bh-wp-logger",
-                "reference": "052fce2c6309d0dd10ef4c6f957c5cbf316db2bc"
+                "reference": "3d681ec11ca3c9b6821ff9fcee3d5df25ada3ad4"
             },
             "require": {
                 "brianhenryie/bh-wp-private-uploads": "dev-master",
@@ -168,7 +168,7 @@
                 }
             ],
             "description": "This is a short description of what plugin_title does.",
-            "time": "2022-08-31T18:21:09+00:00"
+            "time": "2022-09-30T02:55:40+00:00"
         },
         {
             "name": "brianhenryie/bh-wp-private-uploads",
@@ -5459,16 +5459,16 @@
         },
         {
             "name": "php-stubs/wordpress-stubs",
-            "version": "v5.9.3",
+            "version": "v5.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-stubs/wordpress-stubs.git",
-                "reference": "18d56875e5078a50b8ea4bc4b20b735ca61edeee"
+                "reference": "2c18dbfc59b69949b4a4b7dbc096a684f19aaf95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/18d56875e5078a50b8ea4bc4b20b735ca61edeee",
-                "reference": "18d56875e5078a50b8ea4bc4b20b735ca61edeee",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/2c18dbfc59b69949b4a4b7dbc096a684f19aaf95",
+                "reference": "2c18dbfc59b69949b4a4b7dbc096a684f19aaf95",
                 "shasum": ""
             },
             "replace": {
@@ -5500,9 +5500,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-stubs/wordpress-stubs/issues",
-                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v5.9.3"
+                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v5.9.4"
             },
-            "time": "2022-04-06T15:33:59+00:00"
+            "time": "2022-09-30T17:24:17+00:00"
         },
         {
             "name": "php-webdriver/webdriver",
@@ -8046,16 +8046,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.12",
+            "version": "v5.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "c072aa8f724c3af64e2c7a96b796a4863d24dba1"
+                "reference": "3f97f6c7b7e26848a90c0c0cfb91eeb2bb8618be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/c072aa8f724c3af64e2c7a96b796a4863d24dba1",
-                "reference": "c072aa8f724c3af64e2c7a96b796a4863d24dba1",
+                "url": "https://api.github.com/repos/symfony/console/zipball/3f97f6c7b7e26848a90c0c0cfb91eeb2bb8618be",
+                "reference": "3f97f6c7b7e26848a90c0c0cfb91eeb2bb8618be",
                 "shasum": ""
             },
             "require": {
@@ -8125,7 +8125,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.4.12"
+                "source": "https://github.com/symfony/console/tree/v5.4.13"
             },
             "funding": [
                 {
@@ -8141,7 +8141,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-17T13:18:05+00:00"
+            "time": "2022-08-26T13:50:20+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -9279,16 +9279,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.4.12",
+            "version": "v5.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "2fc515e512d721bf31ea76bd02fe23ada4640058"
+                "reference": "2900c668a32138a34118740de3e4d5a701801f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/2fc515e512d721bf31ea76bd02fe23ada4640058",
-                "reference": "2fc515e512d721bf31ea76bd02fe23ada4640058",
+                "url": "https://api.github.com/repos/symfony/string/zipball/2900c668a32138a34118740de3e4d5a701801f53",
+                "reference": "2900c668a32138a34118740de3e4d5a701801f53",
                 "shasum": ""
             },
             "require": {
@@ -9345,7 +9345,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v5.4.12"
+                "source": "https://github.com/symfony/string/tree/v5.4.13"
             },
             "funding": [
                 {
@@ -9361,7 +9361,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-12T17:03:11+00:00"
+            "time": "2022-09-01T01:52:16+00:00"
         },
         {
             "name": "symfony/translation",
@@ -12123,15 +12123,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce",
-            "version": "5.9.1",
+            "version": "6.9.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/5.9.1"
+                "reference": "tags/6.9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.5.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.6.9.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -12227,6 +12227,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
+        "ext-json": "*",
         "php": ">=7.4"
     },
     "platform-dev": [],
