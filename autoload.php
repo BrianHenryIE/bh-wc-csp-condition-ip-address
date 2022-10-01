@@ -15,7 +15,7 @@ namespace BrianHenryIE\WC_CSP_Condition_IP_Address;
 
 use BrianHenryIE\WC_CSP_Condition_IP_Address\Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
 
-require_once __DIR__ . '/strauss/autoload.php';
+require_once __DIR__ . '/vendor-prefixed/autoload.php';
 
 $class_map_file = __DIR__ . '/autoload-classmap.php';
 if ( file_exists( $class_map_file ) ) {
@@ -35,5 +35,5 @@ if ( file_exists( $class_map_file ) ) {
 }
 unset( $class_map_file, $class_map );
 
-$wpcs_autoloader = new WP_Namespace_Autoloader();
+$wpcs_autoloader = new WP_Namespace_Autoloader( array( 'classes_dir' => array( 'src' ) ) );
 $wpcs_autoloader->init();

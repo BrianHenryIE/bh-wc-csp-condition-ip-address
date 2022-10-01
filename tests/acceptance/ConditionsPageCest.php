@@ -8,7 +8,7 @@ class ConditionsPageCest {
 
 	/**
 	 *
-	 * @param AcceptanceTester $I
+	 * @param AcceptanceTester $I The Codeception test actor.
 	 */
 	public function testConditionIsAvailable( AcceptanceTester $I ) {
 

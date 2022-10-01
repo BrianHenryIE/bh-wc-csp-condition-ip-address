@@ -8,8 +8,6 @@
 
 namespace BrianHenryIE\WC_CSP_Condition_IP_Address;
 
-use BrianHenryIE\WC_CSP_Condition_IP_Address\includes\BH_WC_CSP_Condition_IP_Address;
-
 /**
  * Verifies the plugin has been instantiated and added to PHP's $GLOBALS variable.
  */

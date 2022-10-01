@@ -3,7 +3,7 @@
  * WC_CSP_Condition_Behind_VPN class
  *
  * @author   Brian Henry <brianhenryie@gmail.com>
- * @package  bh-wc-csp-condition-ip-address
+ * @package  brianhenryie/bh-wc-csp-condition-ip-address
  * @since    1.0.0
  */
 
@@ -11,7 +11,11 @@ namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipp
 
 use BrianHenryIE\WC_CSP_Condition_IP_Address\Curl\Curl;
 use BrianHenryIE\WC_CSP_Condition_IP_Address\IPLib\Factory as IPFactory;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\Usox\IpIntel\Exception\ServiceException;
 use BrianHenryIE\WC_CSP_Condition_IP_Address\Usox\IpIntel\IpIntel;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\WP_Logger\Logger;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
 use WC_CSP_Condition;
 use WC_Geolocation;
 
@@ -19,16 +23,18 @@ use WC_Geolocation;
  * IP Address
  *
  * @see https://github.com/mlocati/ip-lib
- *
- * @class    WC_CSP_Condition_IP_Address
- * @version  1.0.0
  */
 class WC_CSP_Condition_Behind_VPN extends WC_CSP_Condition {
+	use LoggerAwareTrait;
 
 	/**
 	 * Constructor.
+	 *
+	 * @param ?LoggerInterface $logger A PSR logger.
 	 */
-	public function __construct() {
+	public function __construct( LoggerInterface $logger = null ) {
+		$this->setLogger( $logger ?? Logger::instance() );
+
 		$this->id                             = 'ip_behind_vpn';
 		$this->title                          = __( 'IP VPN', 'bh-wc-csp-condition-ip-address' );
 		$this->supported_product_restrictions = array( 'shipping_countries', 'payment_gateways', 'shipping_methods' );
@@ -65,8 +71,8 @@ class WC_CSP_Condition_Behind_VPN extends WC_CSP_Condition {
 	 *
 	 * Fails-safe (true) when config is bad or when IP cannot be determined.
 	 *
-	 * @param  array $data  { 'condition_id', 'value', 'modifier' }
-	 * @param  array $args  (Optional arguments passed by restrictions.) Not in use here.
+	 * @param  array{condition_id:string, modifier:string} $data
+	 * @param  array<mixed>                                $args  (Optional arguments passed by restrictions.) Not in use here.
 	 * @return boolean
 	 */
 	public function check_condition( $data, $args ) {
@@ -99,10 +105,17 @@ class WC_CSP_Condition_Behind_VPN extends WC_CSP_Condition {
 
 			$client = new IpIntel(
 				new Curl(),
-				get_option( 'woocommerce_email_from_address' ) // The store manager's address.
+				get_option( 'woocommerce_email_from_address' ) // The store manager's email address.
 			);
 
-			$ip_behind_vpn = ! $client->validate( $current_user_ip_address );
+			try {
+				$ip_behind_vpn = ! $client->validate( $current_user_ip_address );
+			} catch ( ServiceException $service_exception ) {
+				$this->logger->error( $service_exception->getMessage(), array( 'exception' => $service_exception ) );
+				// TODO: This should configurable.
+				// Current defaults to not-a-vpn.
+				return false;
+			}
 
 			$expires_in = WEEK_IN_SECONDS;
 
@@ -149,9 +162,9 @@ class WC_CSP_Condition_Behind_VPN extends WC_CSP_Condition {
 	/**
 	 * "IP VPN" – "Customer IP is a VPN"
 	 *
-	 * @param  int   $index
-	 * @param  int   $condition_index
-	 * @param  array $condition_data
+	 * @param  int                    $index
+	 * @param  int                    $condition_index
+	 * @param  array{modifier:string} $condition_data
 	 */
 	public function get_admin_fields_html( $index, $condition_index, $condition_data ) {
 
@@ -162,13 +175,13 @@ class WC_CSP_Condition_Behind_VPN extends WC_CSP_Condition {
 		}
 
 		?>
-		<input type="hidden" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][condition_id]" value="<?php echo $this->id; ?>" />
+		<input type="hidden" name="restriction[<?php echo esc_attr( $index ); ?>][conditions][<?php echo esc_attr( $condition_index ); ?>][condition_id]" value="<?php echo esc_attr( $this->id ); ?>" />
 		<div class="condition_row_inner">
 		<div class="condition_modifier">
 			<div class="sw-enhanced-select">
-				<select name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][modifier]">
-					<option value="is" <?php selected( $modifier, 'is', true ); ?>><?php echo __( 'Customer IP is a VPN', 'bh-wc-csp-condition-ip-address' ); ?></option>
-					<option value="is-not" <?php selected( $modifier, 'is-not', true ); ?>><?php echo __( 'Customer IP is not a VPN', 'bh-wc-csp-condition-ip-address' ); ?></option>
+				<select name="restriction[<?php echo esc_attr( $index ); ?>][conditions][<?php echo esc_attr( $condition_index ); ?>][modifier]">
+					<option value="is" <?php selected( $modifier, 'is', true ); ?>><?php echo esc_html( __( 'Customer IP is a VPN', 'bh-wc-csp-condition-ip-address' ) ); ?></option>
+					<option value="is-not" <?php selected( $modifier, 'is-not', true ); ?>><?php echo esc_html( __( 'Customer IP is not a VPN', 'bh-wc-csp-condition-ip-address' ) ); ?></option>
 				</select>
 			</div>
 		</div>

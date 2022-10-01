@@ -2,10 +2,15 @@
 
 namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments;
 
+/**
+ * @coversDefaultClass \BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments\WC_CSP_Condition_IP_Address
+ */
 class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase {
 
 	/**
 	 * When the IP address is explicitly blocked, the condition should return true.
+	 *
+	 * @covers ::check_condition
 	 */
 	public function test_happy_path_single_ip_match() {
 
@@ -34,6 +39,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * When the IP address does not match the blocked IP, the condition should return false.
+	 *
+	 * @covers ::check_condition
 	 */
 	public function test_happy_path_single_ip_no_match() {
 		$sut = new WC_CSP_Condition_IP_Address();
@@ -61,6 +68,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * When the IP address is not in the specified range, the condition (block) should return true.
+	 *
+	 * @covers ::check_condition
 	 */
 	public function test_happy_path_in_range() {
 
@@ -90,6 +99,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * When the IP address is not in the specified range, the condition (block) should return true.
+	 *
+	 * @covers ::check_condition
 	 */
 	public function test_happy_path_not_in_range() {
 
@@ -118,6 +129,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * The condition check should fail-safe.
+	 *
+	 * @covers ::check_condition
 	 */
 	public function test_bad_input() {
 
@@ -130,6 +143,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * The condition check should fail-safe.
+	 *
+	 * @covers ::check_condition
 	 */
 	public function test_bad_ip() {
 
@@ -176,6 +191,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * Any malformed input should return false.
+	 *
+	 * @covers ::sanitize_ip
 	 */
 	public function test_sanitize_bad_ipv4() {
 
@@ -191,6 +208,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * A CIDR IP range should return itself when sanitizing.
+	 *
+	 * @covers ::sanitize_ip
 	 */
 	public function test_sanitize_happy_ipv4_range() {
 
@@ -209,6 +228,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * A malformed range should return false.
+	 *
+	 * @covers ::sanitize_ip
 	 */
 	public function test_sanitize_bad_ipv4_range() {
 
@@ -224,6 +245,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * Well-formed ip should return itself.
+	 *
+	 * @covers ::sanitize_ip
 	 */
 	public function test_sanitize_happy_ipv6() {
 
@@ -240,7 +263,7 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 	}
 
 	/**
-	 *
+	 * @covers ::sanitize_ip
 	 */
 	public function test_sanitize_happy_ipv6_range() {
 		$sut = new WC_CSP_Condition_IP_Address();
@@ -258,6 +281,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 	/**
 	 * The main function of process_admin_fields is to take the html textarea input, split it, sanitize it
 	 * and return an array of the entries.
+	 *
+	 * @covers ::process_admin_fields
 	 */
 	public function tests_process_admin_fields_happy_single() {
 
@@ -278,6 +303,8 @@ class WC_CSP_Condition_IP_Address_Test extends \Codeception\TestCase\WPTestCase 
 
 	/**
 	 * If the input field is empty, false should be returned.
+	 *
+	 * @covers ::process_admin_fields
 	 */
 	public function tests_process_admin_fields_bad() {
 

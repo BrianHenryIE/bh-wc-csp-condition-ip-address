@@ -26,21 +26,17 @@
 
 namespace BrianHenryIE\WC_CSP_Condition_IP_Address;
 
-use BrianHenryIE\WC_CSP_Condition_IP_Address\Includes\BH_WC_CSP_Condition_IP_Address;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\WP_Logger\Logger;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+	throw new \Exception( 'WPINC not defined.' );
 }
 
 require_once plugin_dir_path( __FILE__ ) . 'autoload.php';
 
-/**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
- */
 define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.2.0' );
+define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_BASENAME', plugin_basename( __FILE__ ) );
 
 /**
  * Begins execution of the plugin.
@@ -51,9 +47,11 @@ define( 'BH_WC_CSP_CONDITION_IP_ADDRESS_VERSION', '1.2.0' );
  *
  * @since    1.0.0
  */
-function instantiate_bh_wc_csp_condition_ip_address() {
+function instantiate_bh_wc_csp_condition_ip_address(): BH_WC_CSP_Condition_IP_Address {
 
-	$plugin = new BH_WC_CSP_Condition_IP_Address();
+	$logger = Logger::instance();
+
+	$plugin = new BH_WC_CSP_Condition_IP_Address( $logger );
 
 	return $plugin;
 }

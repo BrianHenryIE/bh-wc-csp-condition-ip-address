@@ -3,7 +3,7 @@
  * WC_CSP_Condition_IP_Address class
  *
  * @author   Brian Henry <brianhenryie@gmail.com>
- * @package  bh-wc-csp-condition-ip-address
+ * @package  brianhenryie/bh-wc-csp-condition-ip-address
  * @since    1.0.0
  */
 
@@ -17,9 +17,6 @@ use WC_Geolocation;
  * IP Address
  *
  * @see https://github.com/mlocati/ip-lib
- *
- * @class    WC_CSP_Condition_IP_Address
- * @version  1.0.0
  */
 class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 
@@ -36,11 +33,11 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 	/**
 	 * Return condition field-specific resolution message which is combined along with others into a single restriction "resolution message".
 	 *
-	 * @param  array $data  Condition field data.
-	 * @param  array $args  Optional arguments passed by restriction.
+	 * @param  array{data:mixed, modifier:string} $data  Condition field data.
+	 * @param  array<mixed>                       $_args  Optional arguments passed by restriction.
 	 * @return string|false
 	 */
-	public function get_condition_resolution( $data, $args ) {
+	public function get_condition_resolution( $data, $_args ) {
 
 		// Empty conditions always return false (not evaluated).
 		if ( empty( $data['value'] ) ) {
@@ -63,17 +60,18 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 	 *
 	 * Fails-safe when config is bad or when IP cannot be determined.
 	 *
-	 * @param  array $data  { 'condition_id', 'value', 'modifier' }
-	 * @param  array $args  (Optional arguments passed by restrictions.) Not in use here.
+	 * @param  array{value:array, modifier:string} $data
+	 * @param  array<mixed>                        $_args  Optional arguments passed by restrictions. Not in use here.
 	 * @return boolean
 	 */
-	public function check_condition( $data, $args ) {
+	public function check_condition( $data, $_args ) {
 
 		// Empty conditions always apply (not evaluated).
 		if ( empty( $data['value'] ) ) {
 			return true;
 		}
 
+		// This should really be taken care of by the Cloudflare WordPress plugin.
 		if ( isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
 			$_SERVER['HTTP_X_REAL_IP'] = $_SERVER['HTTP_CF_CONNECTING_IP'];
 		}
@@ -141,8 +139,8 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 	/**
 	 * Validate, process and return condition fields.
 	 *
-	 * @param  array $posted_condition_data
-	 * @return array
+	 * @param  array{value:string, modifier:string} $posted_condition_data
+	 * @return false|array{condition_id:string, value:array, modifier:string}
 	 */
 	public function process_admin_fields( $posted_condition_data ) {
 
@@ -162,9 +160,9 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 	/**
 	 * Get ip-address condition content for global restrictions.
 	 *
-	 * @param  int   $index
-	 * @param  int   $condition_index
-	 * @param  array $condition_data
+	 * @param  int                                 $index
+	 * @param  int                                 $condition_index
+	 * @param  array{value:array, modifier:string} $condition_data
 	 */
 	public function get_admin_fields_html( $index, $condition_index, $condition_data ) {
 
@@ -180,19 +178,19 @@ class WC_CSP_Condition_IP_Address extends WC_CSP_Condition {
 		}
 
 		?>
-		<input type="hidden" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][condition_id]" value="<?php echo $this->id; ?>" />
+		<input type="hidden" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][condition_id]" value="<?php echo esc_attr( $this->id ); ?>" />
 		<div class="condition_row_inner">
 			<div class="condition_modifier">
 				<div class="sw-enhanced-select">
 					<select name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][modifier]">
-						<option value="in" <?php selected( $modifier, 'in', true ); ?>><?php echo __( 'is', 'bh-wc-csp-condition-ip-address' ); ?></option>
-						<option value="not-in" <?php selected( $modifier, 'not-in', true ); ?>><?php echo __( 'is not', 'bh-wc-csp-condition-ip-address' ); ?></option>
+						<option value="in" <?php selected( $modifier, 'in', true ); ?>><?php echo esc_html( __( 'is', 'bh-wc-csp-condition-ip-address' ) ); ?></option>
+						<option value="not-in" <?php selected( $modifier, 'not-in', true ); ?>><?php echo esc_html( __( 'is not', 'bh-wc-csp-condition-ip-address' ) ); ?></option>
 					</select>
 				</div>
 			</div>
 			<div class="condition_value">
-				<textarea class="input-text" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][value]" placeholder="<?php _e( 'List 1 IP address or range per line&hellip;', 'bh-wc-csp-condition-ip-address' ); ?>" cols="25" rows="5"><?php echo $ip_addresses; ?></textarea>
-				<span class="description"><?php _e( 'IPv4, IPv6 addresses, as well as IP ranges, in CIDR formats (like <code>::1/128</code> or <code>127.0.0.1/32</code>) and in pattern format (like <code>::*:*</code> or <code>127.0.*.*</code>) are supported.', 'bh-wc-csp-condition-ip-address' ); ?></span>
+				<textarea class="input-text" name="restriction[<?php echo $index; ?>][conditions][<?php echo $condition_index; ?>][value]" placeholder="<?php esc_html( __( 'List 1 IP address or range per line&hellip;', 'bh-wc-csp-condition-ip-address' ) ); ?>" cols="25" rows="5"><?php echo esc_html( $ip_addresses ); ?></textarea>
+				<span class="description"><?php esc_html( __( 'IPv4, IPv6 addresses, as well as IP ranges, in CIDR formats (like <code>::1/128</code> or <code>127.0.0.1/32</code>) and in pattern format (like <code>::*:*</code> or <code>127.0.*.*</code>) are supported.', 'bh-wc-csp-condition-ip-address' ) ); ?></span>
 			</div>
 		</div>
 		<?php

@@ -6,14 +6,14 @@
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 
-namespace BrianHenryIE\WC_CSP_Condition_IP_Address\Includes;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address\WP_Includes;
 
 /**
  * Class BH_WC_CSP_Condition_IP_Address_Test
  *
  * @see I18n
  */
-class BH_WC_CSP_Condition_IP_Address_I18n_Test extends \Codeception\TestCase\WPTestCase {
+class I18n_Integration_Test extends \Codeception\TestCase\WPTestCase {
 
 	/**
 	 * AFAICT, this will fail until a translation has been added.

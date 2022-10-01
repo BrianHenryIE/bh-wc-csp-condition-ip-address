@@ -6,7 +6,7 @@
 
 e.g. only show cheque payment option to schools in Ireland:
 
-![Example](./assets/screenshot-1.png "BH WC CSP Condition IP Address screenshot")
+![Example](./.wordpress-org/screenshot-1.png "BH WC CSP Condition IP Address screenshot")
 
 
 ## Development

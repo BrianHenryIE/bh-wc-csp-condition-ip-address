@@ -8,13 +8,14 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    BH_WC_CSP_Condition_IP_Address
- * @subpackage BH_WC_CSP_Condition_IP_Address/includes
+ * @package  brianhenryie/bh-wc-csp-condition-ip-address
  */
 
-namespace BrianHenryIE\WC_CSP_Condition_IP_Address\Includes;
+namespace BrianHenryIE\WC_CSP_Condition_IP_Address;
 
 use BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_And_Payments\WC_CSP_Conditions;
+use BrianHenryIE\WC_CSP_Condition_IP_Address\WP_Includes\I18n;
+use Psr\Log\LoggerInterface;
 
 /**
  * The core plugin class.
@@ -24,13 +25,10 @@ use BrianHenryIE\WC_CSP_Condition_IP_Address\WooCommerce_Conditional_Shipping_An
  *
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
- *
- * @since      1.0.0
- * @package    BH_WC_CSP_Condition_IP_Address
- * @subpackage BH_WC_CSP_Condition_IP_Address/includes
- * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class BH_WC_CSP_Condition_IP_Address {
+
+	protected LoggerInterface $logger;
 
 	/**
 	 * Define the core functionality of the plugin.
@@ -39,11 +37,10 @@ class BH_WC_CSP_Condition_IP_Address {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the frontend-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @param LoggerInterface $logger A PSR logger.
 	 */
-	public function __construct() {
-		// $this->version = '1.0.0';
-		// $this->plugin_name = 'bh-wc-csp-condition-ip-address';
+	public function __construct( LoggerInterface $logger ) {
+		$this->logger = $logger;
 
 		$this->set_locale();
 		$this->define_wcsp_hooks();
@@ -57,25 +54,23 @@ class BH_WC_CSP_Condition_IP_Address {
 	 *
 	 * @since    1.0.0
 	 */
-	protected function set_locale() {
+	protected function set_locale(): void {
 
 		$plugin_i18n = new I18n();
 
-		add_action( 'plugins_loaded', array( $plugin_i18n, 'load_plugin_textdomain' ) );
-
+		add_action( 'init', array( $plugin_i18n, 'load_plugin_textdomain' ) );
 	}
 
 	/**
-	 * Register all of the hooks related to WooCommerce Conditional Shipping and Payments.
+	 * Register the hooks related to WooCommerce Conditional Shipping and Payments.
 	 *
 	 * @since    1.0.0
 	 */
-	protected function define_wcsp_hooks() {
+	protected function define_wcsp_hooks(): void {
 
 		$plugin_wc_csp_conditions = new WC_CSP_Conditions();
 
 		add_filter( 'woocommerce_csp_conditions', array( $plugin_wc_csp_conditions, 'add_condition' ) );
-
 	}
 
 }
